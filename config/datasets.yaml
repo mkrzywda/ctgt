@@ -1,0 +1,52 @@
+# JARVIS Leaderboard SinglePropertyClass tasks
+# Thresholds from the CTGP research monolith / ctgp.py
+
+tasks:
+  metal_opt:
+    benchmark: dft_3d_optb88vdw_bandgap
+    property: "OPT bandgap (optb88vdw)"
+    threshold: "<= 0.01 eV"
+    positive_class: "metal"
+    description: "Binary metal vs non-metal from DFT bandgap"
+
+  metal_mbj:
+    benchmark: dft_3d_mbj_bandgap
+    property: "MBJ bandgap"
+    threshold: "<= 0.01 eV"
+    positive_class: "metal"
+    description: "Metal classification using meta-GGA MBJ bandgap"
+
+  magnetic:
+    benchmark: dft_3d_magmom_oszicar
+    property: "Magnetic moment (OSZICAR)"
+    threshold: "|mu_B| >= 0.05"
+    positive_class: "magnetic"
+    description: "Magnetic vs non-magnetic materials"
+
+  slme:
+    benchmark: dft_3d_slme
+    property: "Spectroscopic limited max efficiency (SLME)"
+    threshold: ">= 10%"
+    positive_class: "high SLME"
+    description: "High vs low photovoltaic efficiency proxy"
+
+  spillage:
+    benchmark: dft_3d_spillage
+    property: "Band-structure spillage"
+    threshold: ">= 0.1"
+    positive_class: "high spillage"
+    description: "Topological / band-character classification proxy"
+
+  seebeck_p:
+    benchmark: dft_3d_p_Seebeck
+    property: "p-type Seebeck coefficient"
+    threshold: ">= 100 uV/K"
+    positive_class: "high Seebeck"
+    description: "High vs low p-type thermoelectric Seebeck"
+
+  powerfactor_n:
+    benchmark: dft_3d_n_powerfact
+    property: "n-type power factor"
+    threshold: ">= 1000 uW/(m K^2)"
+    positive_class: "high power factor"
+    description: "High vs low n-type thermoelectric power factor"

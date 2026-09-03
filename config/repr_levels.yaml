@@ -1,0 +1,19 @@
+levels:
+  L0:
+    features: "atomic number Z"
+    dim: 1
+    description: "Baseline node representation; matches jarvis_leaderboard_results runs."
+  L1:
+    features: "CGCNN atom embeddings (jarvis-tools)"
+    dim: 92
+    description: "ALIGNN-style atomic features via get_node_attributes."
+  L2:
+    features: "L1 + RBF bond-distance encoding"
+    dim: 102
+    description: "L1 descriptors augmented with 10 Gaussian radial-basis features computed from neighbour distances (sigma = 0.5 Angstrom). The RBF centres were 0.5, 1.39, 2.28, 3.17, 4.06, 4.94, 5.83, 6.72, 7.61, and 8.5 Angstrom; neighbour contributions were aggregated using the arithmetic mean of per-neighbour Gaussian RBF responses, and the resulting features were concatenated to the L1 embedding without additional scaling or normalisation."
+    description_latex: "L1 descriptors augmented with 10 Gaussian radial-basis features computed from neighbour distances ($\\sigma = 0.5$\\,\\AA). The RBF centres were 0.5, 1.39, 2.28, 3.17, 4.06, 4.94, 5.83, 6.72, 7.61, and 8.5\\,\\AA; neighbour contributions were aggregated using the arithmetic mean of per-neighbour Gaussian RBF responses, and the resulting features were concatenated to the L1 embedding without additional scaling or normalisation."
+  L3:
+    features: "L2 + bond-angle statistics"
+    dim: 106
+    description: "L2 descriptors augmented with the mean, standard deviation, minimum, and maximum cosine of all neighbour-pair angles around each atom. For atoms with fewer than two neighbours, angular descriptors were set to zero."
+    description_latex: "L2 descriptors augmented with the mean, standard deviation, minimum, and maximum cosine of all neighbour-pair angles around each atom. For atoms with fewer than two neighbours, angular descriptors were set to zero."
