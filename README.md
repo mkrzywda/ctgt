@@ -159,7 +159,26 @@ python scripts/build_package.py
 
 ## Citation
 
-If you use this code, please cite the CTGP paper (Krzywda et al., 2026).
+If you find this work useful in your research, please cite our paper:
+
+```bibtex
+@article{krzywda2026concattree,
+  author    = {Krzywda, Maciej and Wermiński, Mariusz and
+               Łukasik, Szymon and Gandomi, Amir H.},
+  title     = {Concat-tree genetic programming for graph neural
+               architecture search: Efficient materials property
+               classification toward high-throughput screening},
+  journal   = {Computer Methods in Materials Science},
+  year      = {2026},
+  volume    = {26},
+  number    = {4},
+  pages     = {5--33},
+  doi       = {10.7494/cmms.2026.4.1050},
+  url       = {https://doi.org/10.7494/cmms.2026.4.1050},
+  month     = nov,
+  publisher = {AGH University Press}
+}
+```
 
 ## License
 
